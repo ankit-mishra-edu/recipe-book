@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  font-family: "Muli", sans-serif;
+}
+
+:root {
+  --color-primary: #22242a;
+  --color-secondary: #19b3d3;
+  --color-ternary: #22242a;
+}

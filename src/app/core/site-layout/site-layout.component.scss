@@ -1,0 +1,14 @@
+.site-layout {
+  main {
+    .content-wrapper {
+      // margin-left: 0px;
+      // padding-left: 0px;
+      // background-color: #eee;
+      .content {
+        margin: 15px 0px;
+        display: grid;
+        // grid-template-columns: auto 1fr;
+      }
+    }
+  }
+}

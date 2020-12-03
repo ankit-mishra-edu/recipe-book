@@ -1,0 +1,19 @@
+<div class="recipe-item">
+  <div class="row">
+    <div class="col-xs-12" style="text-align: right">
+      <h2 class="pull-left">Recipe List</h2>
+      <button type="button" class="btn btn-success">
+        <i class="fa fa-plus" aria-hidden="true"></i> New Recipe
+      </button>
+      <hr />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-recipe-item
+        *ngFor="let recipe of recipes"
+        [recipeItem]="recipe"
+      ></app-recipe-item>
+    </div>
+  </div>
+</div>
