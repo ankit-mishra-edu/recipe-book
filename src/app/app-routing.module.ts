@@ -3,17 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 const appRoutes: Routes = [
   {
-    path: 'recipes',
+    path: 'recipe-book',
     loadChildren: () =>
-      import('../app/features/recipes/recipes.module').then(
-        (m) => m.RecipesModule
-      ),
-  },
-  {
-    path: 'shopping-list',
-    loadChildren: () =>
-      import('../app/features/shopping-list/shopping-list.module').then(
-        (m) => m.ShoppingListModule
+      import('../app/features/recipe-book/recipe-book.module').then(
+        (m) => m.RecipeBookModule
       ),
   },
 ];

@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 import { Recipe } from '../../models/recipe/recipe.model';
 import { Ingredient } from '../../models/shopping-list/ingredient.model';
+import { DataService } from '../shared/data.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RecipesService {
-  constructor() {}
+  constructor(private _dataService: DataService) {}
 
   recipes: Recipe[] = [
     new Recipe(
@@ -30,16 +30,15 @@ export class RecipesService {
     ),
   ];
 
-  private _currentlySelectedRecipeItemSubject$ = new BehaviorSubject<Recipe>(
-    new Recipe('', '', '', [])
-  );
-  private _currentlyRecipeItemSelected$ = this._currentlySelectedRecipeItemSubject$.asObservable();
-
   getCurrentlySelectedRecipeItem$() {
-    return this._currentlyRecipeItemSelected$;
+    return this._dataService.getCurrentlySelectedRecipeItem$();
   }
 
   setCurrentlySelectedRecipeItem$(recipeItem: Recipe) {
-    this._currentlySelectedRecipeItemSubject$.next(recipeItem);
+    return this._dataService.setCurrentlySelectedRecipeItem$(recipeItem);
+  }
+
+  getCurrentRouteParam$() {
+    return this._dataService.getCurrentRouteParam$();
   }
 }

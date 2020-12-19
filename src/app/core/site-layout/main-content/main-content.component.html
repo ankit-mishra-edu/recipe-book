@@ -1,8 +1,16 @@
-<div class="container" style="padding-top: 30px">
+<div class="container-md" style="padding-top: 30px">
   <div class="row">
     <div class="col-xs-12">
       <div class="content">
-        <router-outlet></router-outlet>
+        <app-spinner
+          [spinnerColor]="'red'"
+          [spinnerSize]="'2rem'"
+          *ngIf="isRoutingDelayed; else noDelayInRouting"
+          >{{ " Loading the requested page....." }}</app-spinner
+        >
+        <ng-template #noDelayInRouting>
+          <router-outlet></router-outlet>
+        </ng-template>
       </div>
     </div>
   </div>

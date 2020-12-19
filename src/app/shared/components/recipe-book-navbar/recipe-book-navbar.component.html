@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-sm navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"
-      >Rasp<span style="color: var(--color-secondary)">berry</span></a
+      >{{ titleUnColored
+      }}<span style="color: var(--color-secondary)">{{ titleColored }}</span></a
     >
     <button
       class="navbar-toggler"
@@ -22,7 +23,7 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            [routerLink]="['/recipes']"
+            [routerLink]="['/recipe-book/recipes']"
             routerLinkActive="router-link-active"
             >Recipe</a
           >
@@ -30,7 +31,7 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            [routerLink]="['/shopping-list']"
+            [routerLink]="['/recipe-book/shopping-list']"
             routerLinkActive="router-link-active"
             tabindex="-1"
             aria-disabled="true"

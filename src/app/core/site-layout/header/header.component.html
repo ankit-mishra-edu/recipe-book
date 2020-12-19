@@ -1,0 +1,7 @@
+<div *ngIf="currentRoute$ | async as currentRoute">
+  <app-recipe-book-navbar
+    [titleUnColored]="'Rasp'"
+    [titleColored]="'berry'"
+    *ngIf="isRecipeBookRoute(currentRoute)"
+  ></app-recipe-book-navbar>
+</div>
